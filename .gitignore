@@ -1,0 +1,26 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# VS Code / IDE
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Notebooks checkpoints
+*.ipynb_checkpoints/
+
+# Datasets (tùy chọn)
+data/*.csv
+data/*.xlsx
+data/*.zip

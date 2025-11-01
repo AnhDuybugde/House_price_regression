@@ -10,7 +10,8 @@ from sklearn.linear_model import ElasticNet, Ridge
 from xgboost import XGBRegressor
 from lightgbm import LGBMRegressor
 from sklearn.ensemble import StackingRegressor
-import os
+
+
 
 # ===== LOAD DATA =====
 df = load_data("data/train.csv")
@@ -81,12 +82,45 @@ results = {
     "test_r2": test_r2
 }
 
-# Lưu model + preprocessor + log
+# Tạo preprocessor metadata đầy đủ để lưu
+from datetime import datetime
+
+from datetime import datetime
+
+# Preprocessor metadata đầy đủ
+preprocessor_full = {
+    "encoder": encoder,
+    "imputer": imputer,
+    "scaler": scaler,
+    "num_cols": list(num_cols),
+    "cat_cols": list(cat_cols),
+    "feature_order": list(X_train.columns),
+    "imputer_feature_names": (
+        list(imputer.feature_names_in_)
+        if hasattr(imputer, "feature_names_in_") else list(num_cols)
+    ),
+    "yj_transformed_cols": transformed_cols if 'transformed_cols' in locals() else [],
+    "feature_engineering_params": {
+        "poly_degree": 2,
+        "apply_pca": False,
+        "n_pca_components": 0.95
+    },
+    "pipeline_version": "v1.0",
+    "trained_columns_count": X_train.shape[1],
+    "trained_timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    "target_column": TARGET_COL,
+    "random_state": 42,
+    "notes": "Final production-ready preprocessor"
+}
+
+
+
+# Lưu model + preprocessor + log (tự động lưu feature_order.pkl)
 save_results(
     "house_price_stacking",
     results,
     model=stack,
-    preprocessor={"encoder": encoder, "imputer": imputer, "scaler": scaler}
+    preprocessor=preprocessor_full
 )
 
 # Cập nhật summary tổng hợp

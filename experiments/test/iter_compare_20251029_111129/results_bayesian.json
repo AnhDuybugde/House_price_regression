@@ -1,0 +1,13 @@
+{
+    "method": "bayesian",
+    "best_params": {
+        "regressor__alpha": 1,
+        "regressor__l1_ratio": 0.1
+    },
+    "train_rmse": 25014.345987084263,
+    "test_rmse": 32580.91411998152,
+    "train_mae": 15395.104279695972,
+    "test_mae": 19036.40425077424,
+    "train_r2": 0.8950939357837003,
+    "test_r2": 0.86160745498686
+}

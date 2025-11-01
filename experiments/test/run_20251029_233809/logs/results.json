@@ -1,0 +1,13 @@
+{
+    "best_params": {
+        "regressor__alpha": 1,
+        "regressor__l1_ratio": 0.1
+    },
+    "train_rmse": 25016.127832377148,
+    "test_rmse": 32557.34395712688,
+    "train_mae": 15401.17509563693,
+    "test_mae": 19019.834848524275,
+    "train_r2": 0.8950789897175931,
+    "test_r2": 0.8618076184883167,
+    "timestamp": "20251029_233809"
+}

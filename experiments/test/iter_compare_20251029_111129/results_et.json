@@ -1,0 +1,13 @@
+{
+    "method": "et",
+    "best_params": {
+        "regressor__alpha": 1,
+        "regressor__l1_ratio": 0.1
+    },
+    "train_rmse": 25016.72416300929,
+    "test_rmse": 32547.313428406724,
+    "train_mae": 15402.99253025511,
+    "test_mae": 19023.86159983693,
+    "train_r2": 0.8950739874759557,
+    "test_r2": 0.8618927562149377
+}
